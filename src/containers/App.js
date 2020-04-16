@@ -1,8 +1,9 @@
 import React, { Fragment, Component } from 'react';
 import CardList from './CardList';
-import SearchBox from './SearchBox';
-import { products } from './products';
-import './App.css';
+import SearchBox from '../components/SearchBox';
+import { products } from '../products';
+import '../style/App.css';
+import ErrorBoundary from '../components/ErrorBoundary.js';
 
 class App extends Component {
   constructor() {
@@ -34,7 +35,9 @@ class App extends Component {
           </div>
         </header>
         <div className='tc'>
-          <CardList products={ filteredProducts }/>
+          <ErrorBoundary>
+            <CardList products={ filteredProducts }/>
+          </ErrorBoundary>
         </div>
       </Fragment>
     );

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Card from './Card';
+import Card from '../components/Card';
 
 const CardList = ({ products }) => {
   return (
@@ -16,6 +16,10 @@ const CardList = ({ products }) => {
               pictureAddress={products[i].pictureAddress}
               color={products[i].color}
               productType={products[i].productType}
+              available={products[i].available}
+              count={products[i].count}
+              open={parseInt(products[i].available) > 0}
+              reserved={products[i].reserved}
             />
         )})
       }
