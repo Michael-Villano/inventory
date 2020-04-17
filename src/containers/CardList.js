@@ -20,6 +20,7 @@ const CardList = ({ products }) => {
               count={products[i].count}
               open={parseInt(products[i].available) > 0}
               reserved={products[i].reserved}
+              brand={products[i].brand}
             />
         )})
       }

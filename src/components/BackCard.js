@@ -11,20 +11,23 @@ import '../style/BackCard.css';
 //   );
 // }
 
-const BackCard = ({ name, price, description, id, pictureAddress, color, productType, count, available }) => {
+const BackCard = ({ name, price, description, id, pictureAddress, color, productType, count, available, reserved }) => {
   return (
-    <Fragment>
+    <div className='card-content-container'>
       <div className='img-container'>
         <h2>{name}</h2>
-        <p>{color} {productType}</p>
-      </div>
-      <div>
+        <hr/>
+        <p>{reserved} reserved</p>
         <p>2 waiting for repair</p>
         <hr/>
+      </div>
+      <div>
+        <p>None due back today</p>
+        <p>{parseInt(count) - parseInt(available) - parseInt(reserved)} currently out</p>
         <p>{available} / {count} available</p>
         <p>for rent</p>
       </div>
-    </Fragment>
+    </div>
   );
 }
 

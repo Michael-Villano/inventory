@@ -1,6 +1,7 @@
 export const products = [
   {
     id: 0,
+    brand: '3G',
     name: 'Adult 26"',
     productType: 'Bike',
     color: 'Yellow',
@@ -15,6 +16,7 @@ export const products = [
   {
     id: 10,
     name: 'Adult 26"',
+    brand: '3G',
     productType: 'Bike',
     color: 'Blue',
     count: '17',
@@ -28,6 +30,7 @@ export const products = [
   {
     id: 1,
     name: 'Adult 26"',
+    brand: '3G',
     color: 'Orange',
     count: '36',
     available: '0',
@@ -41,6 +44,7 @@ export const products = [
   {
     id: 2,
     name: 'Adult 26"',
+    brand: '3G',
     productType: 'Bike',
     color: 'Black',
     count: '8',
@@ -55,6 +59,7 @@ export const products = [
     id: 3,
     name: 'Adult 24"',
     color: 'Light Blue',
+    brand: '3G',
     count: '14',
     available: '0',
     open: false,
@@ -62,12 +67,13 @@ export const products = [
     productType: 'Bike',
     price: '$19.29',
     description: 'Lorem ipsum',
-    pictureAddress: "https://cdn.shopify.com/s/files/1/0159/3522/products/ROXIE_BBY_BBY_PLATE_1440x954_ddcce937-dab6-4f91-a4eb-a04a68e47e73.jpg?v=1544650370"
+    pictureAddress: "https://cdn.shopify.com/s/files/1/0159/3522/products/ezover_blu_blk_1440x954_1024x1024.jpg?v=1448322887"
   },
   {
     id: 4,
     name: 'Boys 20"',
     color: 'Black',
+    brand: '3G',
     count: '10',
     available: '5',
     open: true,
@@ -81,6 +87,7 @@ export const products = [
     id: 5,
     name: 'Girls 20"',
     color: 'Mint',
+    brand: '3G',
     count: '10',
     available: '5',
     open: true,
@@ -106,7 +113,8 @@ export const products = [
   {
     id: 7,
     name: 'Baby Seat',
-    color: '',
+    color: 'Fits any',
+    brand: 'adult bike',
     count: '4',
     available: '0',
     open: false,
@@ -119,7 +127,8 @@ export const products = [
   {
     id: 8,
     name: 'Baby Trailer',
-    color: '',
+    color: 'Fits any',
+    brand: 'adult bike',
     count: '4',
     available: '4',
     open: true,
@@ -131,8 +140,9 @@ export const products = [
   },
   {
     id: 9,
-    name: 'Equipment Trailer',
-    color: '',
+    name: 'Equip. Trailer',
+    color: 'Fits any',
+    brand: 'adult bike',
     count: '2',
     available: '2',
     open: true,

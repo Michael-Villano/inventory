@@ -23,36 +23,41 @@ import BackCard from './BackCard.js';
 
 // export default Card;
 
-const Card = ({ name, price, description, id, pictureAddress, color, productType, count, available, open, reserved }) => {
+const Card = ({ brand, name, price, description, id, pictureAddress, color, productType, count, available, open, reserved }) => {
 	const [isFlipped, setIsFlipped] = useState(!true);
 
 	const handleClick = () => {
 		setIsFlipped(!isFlipped);
 	};
 
+	const dontHandleClick = () => {
+		setIsFlipped(isFlipped);
+	}
+
 	return (
 		<div className='dib'>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-      	<div onClick={handleClick}
-      	className='tc bg-washed-blue br3 pa3 ma2 grow bw2 shadow-5'>
-	        <FrontCard
-	        	name= { name }
-						price= { price }
-						description= { description }
-						id= { id }
-						pictureAddress= { pictureAddress }
-						color= { color }
-						productType= { productType }
-						count= { count }
-						available= { available }
-						open= {open}
-						reserved= {reserved}
-	        />
-        </div>
+	      <div 
+	      className='tc bg-white grow br3 pa3 ma2 bw2 shadow-5'
+	      onClick={handleClick}>
+		        <FrontCard
+		        	name= { name }
+							price= { price }
+							description= { description }
+							id= { id }
+							pictureAddress= { pictureAddress }
+							color= { color }
+							productType= { productType }
+							count= { count }
+							available= { available }
+							open= {open}
+							brand= {brand}
+		        />
+	      </div>
  
         <div 
         onClick={handleClick}
-        className='tc bg-washed-blue br3 pa3 ma2 grow bw2 shadow-5'
+        className='tc bg-white br3 pa3 ma2 bw2 shadow-5'
         >
           <BackCard
 	        	name= { name }
@@ -64,6 +69,7 @@ const Card = ({ name, price, description, id, pictureAddress, color, productType
 						productType= { productType }
 						count= { count }
 						available={ available }
+						reserved= {reserved}
 	        />
         </div>
       </ReactCardFlip>
