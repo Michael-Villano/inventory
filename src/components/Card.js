@@ -23,7 +23,7 @@ import BackCard from './BackCard.js';
 
 // export default Card;
 
-const Card = ({ brand, name, price, description, id, pictureAddress, color, productType, count, available, open, reserved }) => {
+const Card = ({ inRepair, brand, name, price, description, id, pictureAddress, color, productType, count, available, open, reserved }) => {
 	const [isFlipped, setIsFlipped] = useState(!true);
 
 	const handleClick = () => {
@@ -34,11 +34,17 @@ const Card = ({ brand, name, price, description, id, pictureAddress, color, prod
 		setIsFlipped(isFlipped);
 	}
 
+	const setClass = ({available}) => {
+		if (parseInt(available) > 0) {
+			return 'tc bg-white grow br3 pa3 ma2 bw2 shadow-5';
+		}
+		else return 'tc bg-white grow br3 b--dark-red pa3 ma2 bw2 shadow-5';
+	}
 	return (
 		<div className='dib'>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
 	      <div 
-	      className='tc bg-white grow br3 pa3 ma2 bw2 shadow-5'
+	      className={setClass({ available })}
 	      onClick={handleClick}>
 		        <FrontCard
 		        	name= { name }
@@ -57,7 +63,7 @@ const Card = ({ brand, name, price, description, id, pictureAddress, color, prod
  
         <div 
         onClick={handleClick}
-        className='tc bg-white br3 pa3 ma2 bw2 shadow-5'
+        className={setClass({ available })}
         >
           <BackCard
 	        	name= { name }
@@ -70,6 +76,7 @@ const Card = ({ brand, name, price, description, id, pictureAddress, color, prod
 						count= { count }
 						available={ available }
 						reserved= {reserved}
+						inRepair= {inRepair}
 	        />
         </div>
       </ReactCardFlip>

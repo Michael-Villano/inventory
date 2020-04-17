@@ -7,8 +7,15 @@ const FrontCard = ({ brand, name, price, description, id, pictureAddress, color,
       return 'Available'
     }
     else return 'Unavailable'
-
   }
+
+  const isAvailable = (open) => {
+    if(!open) {
+      return 'b red';
+    }
+    return 'b green';
+  }
+
   return (
     <div className='card-content-container'>
       <div className='img-container'>
@@ -18,7 +25,7 @@ const FrontCard = ({ brand, name, price, description, id, pictureAddress, color,
         <h2>{name}</h2>
         <p>{color} {brand}</p>
         <hr/>
-        <p>{isOpen(open)}</p>
+        <p className={isAvailable(open)}>{isOpen(open)}</p>
       </div>
     </div>
   );
